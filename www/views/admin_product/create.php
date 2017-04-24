@@ -60,8 +60,8 @@
                         <input type="file" name="image" placeholder="" value="">
 
                         <p>Детальное описание</p>
-                        <textarea rows="15" cols="10" wrap="hard" name="description" id="description"></textarea>
-                        <script>CKEDITOR.replace( 'description' );</script>
+                        <textarea rows="15" cols="10" wrap="hard" name="description" id="descriptionc"></textarea>
+                        <script>CKEDITOR.replace( 'descriptionc' );</script>
                         <br/><br/>
 
                         <p>Наличие на складе</p>

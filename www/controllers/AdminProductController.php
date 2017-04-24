@@ -17,7 +17,6 @@ class AdminProductController extends AdminBase
 
         // Получаем список товаров
         $productsList = Product::getProductsList();
-
         // Подключаем вид
         require_once(ROOT . '/views/admin_product/index.php');
         return true;
@@ -33,7 +32,8 @@ class AdminProductController extends AdminBase
 
         // Получаем список категорий для выпадающего списка
         $categoriesList = Category::getCategoriesListAdmin();
-
+        
+        
         // Обработка формы
         if (isset($_POST['submit'])) {
             // Если форма отправлена
@@ -48,7 +48,7 @@ class AdminProductController extends AdminBase
             $options['is_new'] = $_POST['is_new'];
             $options['is_recommended'] = $_POST['is_recommended'];
             $options['status'] = $_POST['status'];
-
+            
             // Флаг ошибок в форме
             $errors = false;
 
@@ -69,10 +69,11 @@ class AdminProductController extends AdminBase
                         // Если загружалось, переместим его в нужную папке, дадим новое имя
                         move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/{$id}.jpg");
                     }
+                    // Перенаправляем пользователя на страницу управлениями товарами
+                header("Location: /admin/product");
                 };
 
-                // Перенаправляем пользователя на страницу управлениями товарами
-                header("Location: /admin/product");
+                
             }
         }
 

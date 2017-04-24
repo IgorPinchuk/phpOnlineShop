@@ -13,7 +13,7 @@
                 </ol>
             </div>
 
-            <a href="admin/user/create" class="btn btn-default back"><i class="fa fa-plus"></i> Добавить пользователя</a>
+            <a href="user/create" class="btn btn-default back"><i class="fa fa-plus"></i> Добавить пользователя</a>
             
             <h4>Список пользователей</h4>
 

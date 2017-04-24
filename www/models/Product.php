@@ -213,6 +213,7 @@ class Product
 
     public static function updateProductById($id, $options)
     {
+        print_r ($options);
         // Соединение с БД
         $db = Db::getConnection();
 
@@ -249,20 +250,15 @@ class Product
 
 
     public static function createProduct($options)
-    {
+    {     
         // Соединение с БД
         $db = Db::getConnection();
 
         // Текст запроса к БД
-        $sql = 'INSERT INTO product '
-                . '(name, code, price, category_id, brand, availability,'
-                . 'description, is_new, is_recommended, status)'
-                . 'VALUES '
-                . '(:name, :code, :price, :category_id, :brand, :availability,'
-                . ':description, :is_new, :is_recommended, :status)';
+        $sql = 'INSERT INTO product (name, code, price, category_id, brand, availability, description, is_new, is_recommended, status) VALUES (:name, :code, :price, :category_id, :brand, :availability, :description, :is_new, :is_recommended, :status)';
 
         // Получение и возврат результатов. Используется подготовленный запрос
-        $result = $db->prepare($sql);
+            $result = $db->prepare($sql);
         $result->bindParam(':name', $options['name'], PDO::PARAM_STR);
         $result->bindParam(':code', $options['code'], PDO::PARAM_STR);
         $result->bindParam(':price', $options['price'], PDO::PARAM_STR);
@@ -273,12 +269,14 @@ class Product
         $result->bindParam(':is_new', $options['is_new'], PDO::PARAM_INT);
         $result->bindParam(':is_recommended', $options['is_recommended'], PDO::PARAM_INT);
         $result->bindParam(':status', $options['status'], PDO::PARAM_INT);
+        
         if ($result->execute()) {
             // Если запрос выполенен успешно, возвращаем id добавленной записи
             return $db->lastInsertId();
-        }
-        // Иначе возвращаем 0
-        return 0;
+        }else{// Иначе возвращаем 0
+            
+        return 0;}
+        
     }
 
 
