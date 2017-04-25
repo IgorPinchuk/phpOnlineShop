@@ -25,12 +25,12 @@
             <div class="col-sm-9 padding-right">
                 <div class="product-details"><!--product-details-->
                     <div class="row">
-                        <div class="col-sm-5">
+                        <div class="col-sm-6">
                             <div class="view-product">
                                 <img src="<?php echo Product::getImage($product['id']); ?>" alt="" />
                             </div>
                         </div>
-                        <div class="col-sm-7">
+                        <div class="col-sm-6">
                             <div class="product-information"><!--/product-information-->
 
                                 <?php if ($product['is_new']): ?>

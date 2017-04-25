@@ -19,6 +19,7 @@ class CatalogController
 
     public function actionCategory($categoryId, $page = 1)
     {
+        $currentCategoryName = Category::getCategoryById($categoryId)['name'];
         // Список категорий для левого меню
         $categories = Category::getCategoriesList();
 
