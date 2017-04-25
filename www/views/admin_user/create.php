@@ -16,7 +16,7 @@
 
             <br/>
 
-            <div class="col-lg-4">
+            <div class="col-lg-8">
                 <div class="login-form">
                     <form action="#" method="post" enctype="multipart/form-data">
 
