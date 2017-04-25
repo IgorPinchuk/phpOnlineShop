@@ -5,7 +5,7 @@
 class Pagination
 {
 
-    private $max = 10;
+    private $max = 9;
 
     //Ключ для url
     private $index = 'page';
@@ -133,7 +133,7 @@ class Pagination
     private function amount()
     {
         // Делим и возвращаем
-        return floor($this->total / $this->limit);
+        return ceil($this->total / $this->limit);
     }
 
 }
